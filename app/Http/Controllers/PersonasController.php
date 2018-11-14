@@ -13,7 +13,7 @@ class PersonasController extends Controller
      */
     public function index()
     {
-        //
+        return view('taller.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class PersonasController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
