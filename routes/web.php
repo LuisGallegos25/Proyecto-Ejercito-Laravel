@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('gallegos', 'PersonasController');
+Route::resource('persona', 'PersonasController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

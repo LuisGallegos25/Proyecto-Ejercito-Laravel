@@ -13,7 +13,7 @@ class PersonasController extends Controller
      */
     public function index()
     {
-        return view('taller.index');
+        return view('vistas.index');
     }
 
     /**
@@ -24,16 +24,19 @@ class PersonasController extends Controller
     public function create(Request $request)
     {
         $persona = new Persona();
-        $persona -> idpersona = $request ->idpersona;
-        $persona -> nombre completo = $request ->nombre completo;
-        $persona -> fechaN = $request ->fechaN;
-        $persona -> sexo = $request ->sexo;
-        $persona -> ci = $request ->ci;
-        $persona -> telefono = $request ->telefono;
-        $persona -> color de ojos = $request ->color de ojos;
-        $persona -> tipoS = $request ->tipoS;
-        $persona -> estatura = $request ->estatura;
-        $persona -> peso = $request ->peso;
+        $persona -> nombrecompleto = $request ->imput('nombres');
+        $persona -> fechaN = $request ->input('fechaN');
+        $persona -> sexo = $request ->select('sexo');
+        $persona -> ci = $request ->input('ci');
+        $persona -> telefono = $request ->input('telefono');
+        $persona -> colordeojos = $request ->input('ojos');
+        $persona -> tipoS = $request ->select('sangre');
+        $persona -> estatura = $request ->input('estatura');
+        $persona -> peso = $request ->input('peso');
+
+        $persona-> save();
+        $persona =new Persona::All();
+        return redirect('/');
     }
 
     /**
