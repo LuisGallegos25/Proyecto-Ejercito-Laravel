@@ -21,9 +21,19 @@ class PersonasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        
+        $persona = new Persona();
+        $persona -> idpersona = $request ->idpersona;
+        $persona -> nombre completo = $request ->nombre completo;
+        $persona -> fechaN = $request ->fechaN;
+        $persona -> sexo = $request ->sexo;
+        $persona -> ci = $request ->ci;
+        $persona -> telefono = $request ->telefono;
+        $persona -> color de ojos = $request ->color de ojos;
+        $persona -> tipoS = $request ->tipoS;
+        $persona -> estatura = $request ->estatura;
+        $persona -> peso = $request ->peso;
     }
 
     /**
