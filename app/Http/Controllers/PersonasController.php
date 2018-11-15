@@ -13,7 +13,7 @@ class PersonasController extends Controller
      */
     public function index()
     {
-        return view('vistas.index');
+       return view('vistas.create');
     }
 
     /**
@@ -21,22 +21,10 @@ class PersonasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $persona = new Persona();
-        $persona -> nombrecompleto = $request ->imput('nombres');
-        $persona -> fechaN = $request ->input('fechaN');
-        $persona -> sexo = $request ->select('sexo');
-        $persona -> ci = $request ->input('ci');
-        $persona -> telefono = $request ->input('telefono');
-        $persona -> colordeojos = $request ->input('ojos');
-        $persona -> tipoS = $request ->select('sangre');
-        $persona -> estatura = $request ->input('estatura');
-        $persona -> peso = $request ->input('peso');
-
-        $persona-> save();
-        $persona =new Persona::All();
-        return redirect('/');
+         return view('welcome');
+       
     }
 
     /**
@@ -47,7 +35,20 @@ class PersonasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $persona = new Persona();
+        $persona -> nombrecompleto = $request ->get('nombres');
+        $persona -> fechaN = $request ->get('fechaN');
+        $persona -> sexo = $request ->select('sexo');
+        $persona -> ci = $request ->get('ci');
+        $persona -> telefono = $request ->get('telefono');
+        $persona -> colordeojos = $request ->get('ojos');
+        $persona -> tipoS = $request ->select('sangre');
+        $persona -> estatura = $request ->get('estatura');
+        $persona -> peso = $request ->get('peso');
+
+        $persona-> save();
+        //$persona = new Persona :: All();
+        return redirect('home');
     }
 
     /**
