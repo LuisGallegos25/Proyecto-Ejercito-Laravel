@@ -14,7 +14,7 @@ class PersonasController extends Controller
     public function index()
     {
         //$persona = Persona::All();
-       return view('vistas.index');
+       return view('personas.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class PersonasController extends Controller
     public function create()
     {
            
-         return view('vistas.create');
+         return view('personas.create');
        
     }
 
@@ -61,7 +61,7 @@ class PersonasController extends Controller
          $persona->peso = $request->input('peso');
          $persona->save();
          $persona = Persona::All();
-         return view('vistas.index');
+         return view('personas.index');
     }
 
     /**
