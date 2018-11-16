@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use app\Personas;
 class PersonasController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class PersonasController extends Controller
      */
     public function index()
     {
-       return view('vistas.create');
+        //$persona = Persona::All();
+       return view('vistas.index');
     }
 
     /**
@@ -23,7 +24,8 @@ class PersonasController extends Controller
      */
     public function create()
     {
-         return view('welcome');
+           
+         return view('vistas.create');
        
     }
 
@@ -35,20 +37,31 @@ class PersonasController extends Controller
      */
     public function store(Request $request)
     {
-         $persona = new Persona();
-        $persona -> nombrecompleto = $request ->get('nombres');
-        $persona -> fechaN = $request ->get('fechaN');
-        $persona -> sexo = $request ->select('sexo');
-        $persona -> ci = $request ->get('ci');
-        $persona -> telefono = $request ->get('telefono');
-        $persona -> colordeojos = $request ->get('ojos');
-        $persona -> tipoS = $request ->select('sangre');
-        $persona -> estatura = $request ->get('estatura');
-        $persona -> peso = $request ->get('peso');
 
-        $persona-> save();
-        //$persona = new Persona :: All();
-        return redirect('home');
+            $validateData = $request->validate([
+            'nombrecompleto' => 'required',
+            'sexo' => 'required',
+            'ci' => 'required',
+            'telefono' => 'required',
+            'colordeojos' => 'required',
+            'tipoS' => 'required',
+            'estatura' => 'required',
+            'peso' => 'required'
+        ]);
+
+        
+         $persona = new Persona();
+         $persona->nombrecompleto = $request->input('nombres');
+         $persona->sexo = $request->input('sexo');
+         $persona->ci = $request->input('ci');
+         $persona->telefono = $request->input('telefono');
+         $persona->colordeojos = $request->input('ojos');
+         $persona->tipoS = $request->input('sangre');
+         $persona->estatura = $request->input('estatura');
+         $persona->peso = $request->input('peso');
+         $persona->save();
+         $persona = Persona::All();
+         return view('vistas.index');
     }
 
     /**

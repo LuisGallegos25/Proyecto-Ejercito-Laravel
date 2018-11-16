@@ -13,7 +13,8 @@
   <body>
     <div class="container">
       <h2>Registro de personas</h2><br/>
-      <form method="post" action="{{url('passports')}}" enctype="multipart/form-data">
+      <form method="post" action="{{url('persona.create ')}}" enctype="multipart/form-data">
+      {!! csrf_field()!!}
         @csrf
         <div class="row">
           <div class="col-md-4"></div>
@@ -25,7 +26,7 @@
 
                 <div class="form-group col-md-4">
                 <lable>Sexo</lable>
-                <select name="office">
+                <select name="sexo">
                   <option value="Hombre">Hombre</option>
                   <option value="Mujer">Mujer</option>
                 </select>
@@ -54,12 +55,15 @@
               <input type="text" class="form-control" name="estatura">
             </div>
           </div>
-        <div class="row">
+          <div class="row">
           <div class="col-md-4"></div>
-          <div class="form-group col-md-4">
-            <input type="file" name="filename">    
-         </div>
-        </div>
+            <div class="form-group col-md-4">
+              <label for="Number">CI:</label>
+              <input type="text" class="form-control" name="ci">
+            </div>
+          </div>
+        
+       
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
@@ -67,18 +71,7 @@
             <input class="date form-control"  type="text" id="datepicker" name="peso">   
          </div>
         </div>
-         <div class="row">
-          <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
-                <lable>Passport Office</lable>
-                <select name="office">
-                  <option value="Mumbai">Mumbai</option>
-                  <option value="Chennai">Chennai</option>
-                  <option value="Delhi">Delhi</option>  
-                  <option value="Bangalore">Bangalore</option>  
-                </select>
-            </div>
-        </div>
+         
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4" style="margin-top:60px">
