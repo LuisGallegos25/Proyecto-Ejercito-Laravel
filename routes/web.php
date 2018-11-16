@@ -28,9 +28,9 @@ Route::get('/usuaririos/nuevo', function () {
     return 'Crear nuevo usaurio';
 });
 
-Route::get('/persona/nuevo','PersonasController@create'); 
-Route::post('/persona/create','PersonasController@store'); 
-Route::get('/persona','PersonasController@index'); 
+Route::resource('/persona/nuevo','PersonasController'); 
+Route::resource('/persona/create','PersonasController'); 
+Route::resource('/persona','PersonasController'); 
 
 
 
