@@ -14,7 +14,11 @@ class CreateEscuadrasTable extends Migration
     public function up()
     {
         Schema::create('escuadras', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Escuadras');
+            $table->foreign('soldado')->references('id_Soldado')->on('soldados');
+            $table->string('nombre');
+            $table->foreign('seccion')->references('id_Seccion')->on('seccions');
+            
             $table->timestamps();
         });
     }

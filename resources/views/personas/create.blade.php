@@ -12,10 +12,10 @@
   </head>
   <body>
     <div class="container">
-      <h2>Registro de personas</h2><br/>
-      <form method="post" action="/persona" enctype="multipart/form-data">
+      <h2><strong>Registro de personas</strong></h2><br/>
+      <form method="post" action="{{url('/persona')}}" enctype="multipart/form-data">
       {!! csrf_field()!!}
-        @csrf
+    
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
@@ -24,13 +24,16 @@
           </div>
         </div>
 
-                <div class="form-group col-md-4">
+                <div class="row">
+          <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
                 <lable>Sexo</lable>
                 <select name="sexo">
-                  <option value="Hombre">Hombre</option>
-                  <option value="Mujer">Mujer</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mmujer">Mujer</option>  
                 </select>
             </div>
+        </div>
 
         <div class="row">
           <div class="col-md-4"></div>
@@ -40,13 +43,18 @@
             </div>
           </div>
 
-          <div class="form-group col-md-4">
-                <lable>Tipo de Sangre</lable>
+          <div class="row">
+          <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <lable>Tipo de sangre</lable>
                 <select name="sangre">
-                  <option value="O-">O-</option>
                   <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                  <option value="A+">A+</option>  
+                  <option value="A-">A-</option>  
                 </select>
             </div>
+        </div>
 
         <div class="row">
           <div class="col-md-4"></div>
@@ -75,7 +83,7 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4" style="margin-top:60px">
-            <button type="submit" class="btn btn-success">REGISTRAR</button>
+            <button type="submit" class="btn btn-success">Registrar</button>
           </div>
         </div>
       </form>

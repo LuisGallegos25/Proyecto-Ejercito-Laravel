@@ -14,7 +14,10 @@ class CreateComandanteEscuadronsTable extends Migration
     public function up()
     {
         Schema::create('comandante_escuadrons', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_ComandanteE');
+            $table->foreign('instructor')->references('id_Instructor')->on('instructors');
+            $table->foreign('escuadron')->references('id_Escuadron')->on('escuadrons');
+            
             $table->timestamps();
         });
     }

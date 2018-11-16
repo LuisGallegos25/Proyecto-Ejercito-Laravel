@@ -14,7 +14,10 @@ class CreateSoldadosTable extends Migration
     public function up()
     {
         Schema::create('soldados', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Soldado');
+            $table->foreign('persona')->references('id_Persona')->on('personas');
+            $table->foreign('arma')->references('id_Arma')->on('armas');
+            
             $table->timestamps();
         });
     }

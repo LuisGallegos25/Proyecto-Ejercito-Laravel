@@ -14,7 +14,9 @@ class CreateArmasTable extends Migration
     public function up()
     {
         Schema::create('armas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Arma');
+            $table-> string('nombre');
+            
             $table->timestamps();
         });
     }

@@ -14,7 +14,10 @@ class CreateEscuadronsTable extends Migration
     public function up()
     {
         Schema::create('escuadrons', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Escuadron');
+            $table->string('nombre');
+            $table->foreign('escuadron')->references('id_Regimiento')->on('regimientos');
+            
             $table->timestamps();
         });
     }

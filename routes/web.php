@@ -28,9 +28,10 @@ Route::get('/usuaririos/nuevo', function () {
     return 'Crear nuevo usaurio';
 });
 
-Route::resource('/persona/nuevo','PersonasController'); 
-Route::resource('/persona/create','PersonasController'); 
-Route::resource('/persona','PersonasController'); 
+//Route::resource('persona/nuevo','PersonasController'); 
+//Route::resource('persona/create','PersonasController'); 
+Route::resource('persona','PersonasController'); 
+//Route::resource('persona/update','PersonasController'); 
 
 
 

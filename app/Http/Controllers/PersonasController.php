@@ -14,7 +14,7 @@ class PersonasController extends Controller
     public function index()
     {
         //$persona = Persona::All();
-       return view('personas.index');
+       return view('personas.index',compact('persona'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PersonasController extends Controller
     public function create()
     {
            
-         return view('personas.create');
+         return view('personas.create', compact('persona'));
        
     }
 
@@ -39,29 +39,29 @@ class PersonasController extends Controller
     {
 
             $validateData = $request->validate([
-            'nombrecompleto' => 'required',
+            'nombres' => 'required',
             'sexo' => 'required',
             'ci' => 'required',
             'telefono' => 'required',
-            'colordeojos' => 'required',
-            'tipoS' => 'required',
+            'ojos' => 'required',
+            'sangre' => 'required',
             'estatura' => 'required',
             'peso' => 'required'
         ]);
 
         
-         $persona = new Persona();
-         $persona->nombrecompleto = $request->input('nombres');
+         $persona = new  Persona();
+         $persona->nombres = $request->input('nombres');
          $persona->sexo = $request->input('sexo');
          $persona->ci = $request->input('ci');
          $persona->telefono = $request->input('telefono');
-         $persona->colordeojos = $request->input('ojos');
-         $persona->tipoS = $request->input('sangre');
+         $persona->ojos = $request->input('ojos');
+         $persona->sangre = $request->input('sangre');
          $persona->estatura = $request->input('estatura');
          $persona->peso = $request->input('peso');
          $persona->save();
          $persona = Persona::All();
-         return view('personas.index');
+          return view('personas.index', compact('persona'));
     }
 
     /**
@@ -95,7 +95,13 @@ class PersonasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $persona= \App\Persona::find($id);
+       /* $persona->name=$request->get('name');
+        $persona->email=$request->get('email');
+        $persona->number=$request->get('number');
+        $persona->office=$request->get('office');*/
+        $persona->save();
+        return redirect('personas.index');
     }
 
     /**
@@ -106,6 +112,8 @@ class PersonasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $persona = \App\Personas::find($id);
+        $persona->delete();
+        return redirect('personas.index')->with('success','Information has been  deleted');
     }
 }

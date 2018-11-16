@@ -14,7 +14,12 @@ class CreateRegimientosTable extends Migration
     public function up()
     {
         Schema::create('regimientos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Regimiento');
+            $table->string('nombre');
+            $table->string('ubicacion');
+            $table->foreign('arma')->references('id_Arma')->on('armas');
+            $table->foreign('comandante')->references('id_ComandanteR')->on('comandante_regimientos');
+            
             $table->timestamps();
         });
     }

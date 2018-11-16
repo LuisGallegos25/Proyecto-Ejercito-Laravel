@@ -14,7 +14,10 @@ class CreateInstructorsTable extends Migration
     public function up()
     {
         Schema::create('instructors', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Instructor');
+            $table->foreign('persona')->references('id_Personas')->on('personas');
+            $table->fereign('arma')->references('id_Arma')->on('armas');
+            
             $table->timestamps();
         });
     }
