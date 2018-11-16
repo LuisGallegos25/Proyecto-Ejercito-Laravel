@@ -15,8 +15,10 @@ class CreateInstructorsTable extends Migration
     {
         Schema::create('instructors', function (Blueprint $table) {
             $table->increments('id_Instructor');
+            $table->unsignedInteger('arma');
+            $table->unsignedInteger('persona');
             $table->foreign('persona')->references('id_Personas')->on('personas');
-            $table->fereign('arma')->references('id_Arma')->on('armas');
+            $table->foreign('arma')->references('id_Arma')->on('armas');
             
             $table->timestamps();
         });

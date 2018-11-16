@@ -15,6 +15,8 @@ class CreateComandanteEscuadronsTable extends Migration
     {
         Schema::create('comandante_escuadrons', function (Blueprint $table) {
             $table->increments('id_ComandanteE');
+            $table->unsignedInteger('instructor');
+            $table->unsignedInteger('escuadron');
             $table->foreign('instructor')->references('id_Instructor')->on('instructors');
             $table->foreign('escuadron')->references('id_Escuadron')->on('escuadrons');
             

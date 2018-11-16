@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Personas;
+use App\Personas;
 class PersonasController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class PersonasController extends Controller
      */
     public function index()
     {
-        //$persona = Persona::All();
+        $persona = Persona::All();
        return view('personas.index',compact('persona'));
     }
 
@@ -38,7 +38,7 @@ class PersonasController extends Controller
     public function store(Request $request)
     {
 
-            $validateData = $request->validate([
+            /*$validateData = $request->validate([
             'nombres' => 'required',
             'sexo' => 'required',
             'ci' => 'required',
@@ -47,10 +47,10 @@ class PersonasController extends Controller
             'sangre' => 'required',
             'estatura' => 'required',
             'peso' => 'required'
-        ]);
+        ]);*/
 
         
-         $persona = new  Persona();
+         $persona = new  Personas();
          $persona->nombres = $request->input('nombres');
          $persona->sexo = $request->input('sexo');
          $persona->ci = $request->input('ci');
@@ -60,7 +60,7 @@ class PersonasController extends Controller
          $persona->estatura = $request->input('estatura');
          $persona->peso = $request->input('peso');
          $persona->save();
-         $persona = Persona::All();
+         $persona = Personas::All();
           return view('personas.index', compact('persona'));
     }
 

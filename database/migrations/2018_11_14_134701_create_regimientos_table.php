@@ -17,6 +17,8 @@ class CreateRegimientosTable extends Migration
             $table->increments('id_Regimiento');
             $table->string('nombre');
             $table->string('ubicacion');
+            $table->unsignedInteger('comandante');
+            $table->unsignedInteger('arma');
             $table->foreign('arma')->references('id_Arma')->on('armas');
             $table->foreign('comandante')->references('id_ComandanteR')->on('comandante_regimientos');
             

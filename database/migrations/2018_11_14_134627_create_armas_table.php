@@ -15,7 +15,7 @@ class CreateArmasTable extends Migration
     {
         Schema::create('armas', function (Blueprint $table) {
             $table->increments('id_Arma');
-            $table-> string('nombre');
+            $table->string('nombre');
             
             $table->timestamps();
         });

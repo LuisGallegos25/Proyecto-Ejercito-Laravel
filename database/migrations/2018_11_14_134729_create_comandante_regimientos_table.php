@@ -15,6 +15,8 @@ class CreateComandanteRegimientosTable extends Migration
     {
         Schema::create('comandante_regimientos', function (Blueprint $table) {
             $table->increments('id_ComandanteR');
+            $table->unsignedInteger('persona');
+            $table->unsignedInteger('arma');
             $table->foreign('persona')->references('id_Persona')->on('personas');
             $table->foreign('arma')->references('id_Arma')->on('armas');
             

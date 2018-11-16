@@ -14,15 +14,15 @@ class CreatePersonasTable extends Migration
     public function up()
     {
         Schema::create('personas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombrecompleto');
+            $table->increments('id_Persona');
+            $table->string('nombres');
             $table->string('sexo');
-            $table->unsignedInteger('ci');
-            $table->unsignedInteger('telefono');
-            $table->string('colordeojos');
-            $table->string('tipoS');
-            $table->unsignedInteger('estatura');
-            $table->unsignedInteger('peso');
+            $table->string('ci');
+            $table->string('telefono');
+            $table->string('ojos');
+            $table->string('sangre');
+            $table->string('estatura');
+            $table->string('peso');
 
             $table->timestamps();
         });
