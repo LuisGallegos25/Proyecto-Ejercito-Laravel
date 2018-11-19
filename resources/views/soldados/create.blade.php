@@ -12,8 +12,8 @@
   </head>
   <body>
     <div class="container">
-      <h2><strong>Registro de personas</strong></h2><br/>
-      <form method="post" action="{{url('/persona')}}" enctype="multipart/form-data">
+      <h2><strong>Registro de soldados</strong></h2><br/>
+      <form method="post" action="{{url('/soldado')}}" enctype="multipart/form-data">
       {!! csrf_field()!!}
     
         <div class="row">
@@ -87,6 +87,21 @@
             <input class="date form-control"  type="text" id="datepicker" name="peso">   
          </div>
         </div>
+
+<div class="row">
+          <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <lable>Arma</lable>
+                <select name="arma">
+                  <option value="Caballeria">Caballeria</option>
+                  <option value="Infanteria">Infanteria</option>
+                  <option value="Ingenieria">Ingenieria</option>  
+                  <option value="Comunicaciones">Comunicaciones</option>  
+                  <option value="Artilleria">Artilleria</option> 
+                </select>
+            </div>
+        </div>
+
          
         <div class="row">
           <div class="col-md-4"></div>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,26 +17,36 @@
     <table class="table table-striped">
     <thead>
       <tr>
+
         <th>Nombre Completo</th>
+        <th>Sexo</th>
+        <th>C.I.</th>
         <th>Telefono</th>
+        <th>Color de ojos</th>
+        <th>Tipo de Sangre</th>
         <th>Estatura</th>
-        <th>Peso</th>
+        <th>Peso</th>   
+         <th>Arma</th>    
         <th colspan="2">Action</th>
       </tr>
     </thead>
     <tbody>
       
-      @foreach($personas as $persona)
+      @foreach($soldados as $person)
       
       <tr>
-        <td>{{$persona['nombres']}}</td>
-        <td>{{$persona['telefono']}}</td>
-        <td>{{$persona['estatura']}}</td>
-        <td>{{$persona['peso']}}</td>    
-        <td><a href="{{action('personaController@edit', $persona['id_Persona'])}}" class="btn btn-warning">Edit</a></td>
+        <td>{{$person->nombres}}</td>
+        <td>{{$person->sexo}}</td>
+        <td>{{$person->ci}}</td>
+        <td>{{$person->telefono}}</td>
+        <td>{{$person->ojos}}</td>
+        <td>{{$person->sangre}}</td>
+        <td>{{$person->estatura}}</td>
+        <td>{{$person->peso}}</td> 
+         <td>{{$person->arma}}</td>    
+        <td><a href="#" class="btn btn-warning">Edit</a></td>
         <td>
-          <form action="{{action('personaController@destroy', $persona['id_Persona'])}}" method="post">
-            @csrf
+          <form action="#" method="post">
             <input name="_method" type="hidden" value="DELETE">
             <button class="btn btn-danger" type="submit">Delete</button>
           </form>

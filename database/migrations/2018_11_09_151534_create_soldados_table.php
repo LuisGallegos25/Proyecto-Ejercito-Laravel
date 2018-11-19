@@ -15,11 +15,15 @@ class CreateSoldadosTable extends Migration
     {
         Schema::create('soldados', function (Blueprint $table) {
             $table->increments('id_Soldado');
-             $table->unsignedInteger('persona');
-             $table->unsignedInteger('arma');
-            $table->foreign('persona')->references('id_Persona')->on('personas');
-            $table->foreign('arma')->references('id_Arma')->on('armas');
-            
+            $table->string('nombres');
+            $table->string('sexo');
+            $table->string('ci');
+            $table->string('telefono');
+            $table->string('ojos');
+            $table->string('sangre');
+            $table->string('estatura');
+            $table->string('peso');
+            $table->string('arma');
             $table->timestamps();
         });
     }

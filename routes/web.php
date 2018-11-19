@@ -16,21 +16,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/usuarios', function () {
+Route::get('/soldado', function () {
     return 'welcome';
 });
 
-Route::get('/usuarios/{id}', function ($id) {
+/*Route::get('/usuarios/{id}', function ($id) {
     return "Mostrando datos del usuario: {$id}";
 })->where('id','[0-9]+');
 
 Route::get('/usuaririos/nuevo', function () {
     return 'Crear nuevo usaurio';
-});
+});*/
 
 //Route::resource('persona/nuevo','PersonasController'); 
 //Route::resource('persona/create','PersonasController'); 
-Route::resource('persona','PersonasController'); 
+Route::resource('soldado','SoldadoController'); 
 //Route::resource('persona/update','PersonasController'); 
 
 
