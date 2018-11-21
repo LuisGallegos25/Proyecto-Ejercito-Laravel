@@ -20,6 +20,7 @@ Route::get('/ingresar', function () {
     return 'welcome';
 });
 
+
 /*Route::get('/usuarios/{id}', function ($id) {
     return "Mostrando datos del usuario: {$id}";
 })->where('id','[0-9]+');
@@ -38,6 +39,10 @@ Route::resource('/instructor','InstructorController');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

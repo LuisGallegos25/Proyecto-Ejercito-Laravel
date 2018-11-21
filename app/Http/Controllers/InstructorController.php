@@ -75,7 +75,7 @@ class instructorController extends Controller
     public function show($id_Instructor)
     {
         $instructor = Instructor::where('id_Instructor', $id_Instructor)->first();
-        return view('instructor.edit', compact('instructor'));
+        return view('instructor.index2', compact('instructor'));
         
     }
 
@@ -87,8 +87,8 @@ class instructorController extends Controller
      */
     public function edit($id_Instructor)
     {
-       $instructor = Instructor::where('id_Instructor', $id_Instructor)->first();
-        return view('instructor.edit', compact('instructor'));
+      $instructor = Instructor::where('id_Instructor', $id_Instructor)->first();
+        return view('instructor.index2', compact('instructor'));
     }
 
     /**

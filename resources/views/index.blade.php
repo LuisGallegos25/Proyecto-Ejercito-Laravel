@@ -151,7 +151,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        
+                        <a style="color:white;" href="{{ url('/home') }}">Home</a>
                     @else
                         <a style="color:white;" href="{{ url('/login') }}">Login</a>
                         <a style="color:white;" href="{{ url('/register') }}">Register</a>
@@ -166,4 +166,3 @@
 </body>
 
 </html>
-
