@@ -14,9 +14,8 @@
      @endif
     <table class="table table-striped">
     <thead>
-    <center><h1>LISTADO DE SOLDADOS</h1></center><br>
+    <center><h1>LISTADO DE INSTRUCTORES</h1></center><br>
       <tr>
-
         <th>Nombre Completo</th>
         <th>Sexo</th>
         <th>C.I.</th>
@@ -26,29 +25,30 @@
         <th>Estatura</th>
         <th>Peso</th>   
          <th>Arma</th>    
-        <th colspan="2">Action</th>
+        <th colspan="2">Opcion</th>
       </tr>
     </thead>
     <tbody>
       
-      @foreach($soldado as $soldados)
+      @foreach($instructor as $inst)
       
       <tr>
-        <td>{{$soldados->nombres}}</td>
-        <td>{{$soldados->sexo}}</td>
-        <td>{{$soldados->ci}}</td>
-        <td>{{$soldados->telefono}}</td>
-        <td>{{$soldados->ojos}}</td>
-        <td>{{$soldados->sangre}}</td>
-        <td>{{$soldados->estatura}}</td>
-        <td>{{$soldados->peso}}</td> 
-         <td>{{$soldados->arma}}</td>    
-        <td><a href="soldado/{{$soldados->id_Soldado}}" class="btn btn-warning">Editar</a></td> 
+        <td>{{$inst->nombres}}</td>
+        <td>{{$inst->sexo}}</td>
+        <td>{{$inst->ci}}</td>
+        <td>{{$inst->telefono}}</td>
+        <td>{{$inst->ojos}}</td>
+        <td>{{$inst->sangre}}</td>
+        <td>{{$inst->estatura}}</td>
+        <td>{{$inst->peso}}</td> 
+         <td>{{$inst->arma}}</td>    
+        
+        <td><a href="instructor/{{$inst->id_Instructor}}" class="btn btn-warning">Editar</a></td> 
         <td>
-          <form action="soldado/{{$soldados->id_Soldado}}" method="post">
-            {!! csrf_field() !!}
+          <form action="instructor/{{$inst->id_Instructor}}" method="post">
+          {!! csrf_field() !!}
             <input name="_method" type="hidden" value="DELETE">
-            <button class="btn btn-danger" type="submit">Delete</button>
+            <button class="btn btn-danger" type="submit">Eliminar</button>
           </form>
         </td>
       </tr>

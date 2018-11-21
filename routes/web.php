@@ -16,7 +16,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/persona', function () {
+Route::get('/ingresar', function () {
     return 'welcome';
 });
 
@@ -31,7 +31,18 @@ Route::get('/usuaririos/nuevo', function () {
 //Route::resource('persona/nuevo','PersonasController'); 
 //Route::resource('persona/create','PersonasController'); 
 Route::resource('/soldado','SoldadoController');
+Route::resource('/instructor','InstructorController');
 
 
 
 
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

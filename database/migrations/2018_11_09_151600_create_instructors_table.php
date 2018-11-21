@@ -23,8 +23,8 @@ class CreateInstructorsTable extends Migration
             $table->string('sangre');
             $table->string('estatura');
             $table->string('peso');
-            $table->unsignedInteger('arma');
-            $table->foreign('arma')->references('id_Arma')->on('armas');
+            $table->string('arma');
+          
             
             $table->timestamps();
         });

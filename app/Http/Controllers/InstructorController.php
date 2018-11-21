@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class InstructorController extends Controller
+use App\Instructor;
+class instructorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,9 @@ class InstructorController extends Controller
      */
     public function index()
     {
-        //
+        $instructor= Instructor::All();
+        return view('instructor.index',compact('instructor'));
+        //return $instructors;
     }
 
     /**
@@ -23,7 +25,9 @@ class InstructorController extends Controller
      */
     public function create()
     {
-        //
+           
+         return view('instructor.create', compact('instructor'));
+       
     }
 
     /**
@@ -34,7 +38,32 @@ class InstructorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+            /*$validateData = $request->validate([
+            'nombres' => 'required',
+            'sexo' => 'required',
+            'ci' => 'required',
+            'telefono' => 'required',
+            'ojos' => 'required',
+            'sangre' => 'required',
+            'estatura' => 'required',
+            'peso' => 'required'
+        ]);*/
+
+        
+         $instructor = new  Instructor();
+         $instructor->nombres = $request->input('nombres');
+         $instructor->sexo = $request->input('sexo');
+         $instructor->ci = $request->input('ci');
+         $instructor->telefono = $request->input('telefono');
+         $instructor->ojos = $request->input('ojos');
+         $instructor->sangre = $request->input('sangre');
+         $instructor->estatura = $request->input('estatura');
+         $instructor->peso = $request->input('peso');
+        $instructor->arma = $request->input('arma');
+         $instructor->save();
+         $instructor = instructor::All();
+          return view('instructor.index', compact('instructor'));
     }
 
     /**
@@ -43,9 +72,11 @@ class InstructorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_Instructor)
     {
-        //
+        $instructor = Instructor::where('id_Instructor', $id_Instructor)->first();
+        return view('instructor.edit', compact('instructor'));
+        
     }
 
     /**
@@ -54,9 +85,10 @@ class InstructorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_Instructor)
     {
-        //
+       $instructor = Instructor::where('id_Instructor', $id_Instructor)->first();
+        return view('instructor.edit', compact('instructor'));
     }
 
     /**
@@ -66,19 +98,28 @@ class InstructorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_Instructor)
     {
-        //
+        $instructor = Instructor::find($id_Instructor);
+        $instructor->telefono = $request->input('telefono');
+        $instructor->estatura = $request->input('estatura');
+        $instructor->peso = $request->input('peso');
+        $instructor->save();
+        $instructor = Instructor::All();
+          return view('instructor.index', compact('instructor'));
     }
 
-    /** 
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_Instructor)
     {
-        //
+        $instructor = Instructor::find($id_Instructor);
+        $instructor->delete();
+        $instructor = Instructor::All();
+        return view('instructor.index', compact('instructor'));
     }
 }
