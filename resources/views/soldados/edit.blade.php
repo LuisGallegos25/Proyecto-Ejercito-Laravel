@@ -13,8 +13,9 @@
   <body>
     <div class="container">
       <h2><strong>Editar datos de Soldado</strong></h2><br/>
-      <form method="post" action="soldado/{{$soldados->id_Soldado}}" enctype="multipart/form-data">
-      {!! csrf_field()!!}
+      <form method="post" action="/soldado/{{$soldados->id_Soldado}}" enctype="multipart/form-data">
+        
+     
         <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
