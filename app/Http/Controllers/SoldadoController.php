@@ -72,9 +72,10 @@ class SoldadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_Soldado)
     {
-        //
+        $soldados = Soldado::where('id_Soldado', $id_Soldado)->first();
+        return view('soldados.edit', compact('soldados'));
     }
 
     /**
@@ -83,9 +84,10 @@ class SoldadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_Soldado)
     {
-        //
+        $soldados = Soldado::where('id_Soldado', $id_Soldado)->first();
+        return view('soldados.edit', compact('soldados'));
     }
 
     /**
@@ -95,15 +97,14 @@ class SoldadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_Soldado)
     {
-       $soldados= \App\soldados::find($id);
-       /* $soldados->name=$request->get('name');
-        $soldados->email=$request->get('email');
-        $soldados->number=$request->get('number');
-        $soldados->office=$request->get('office');*/
+        $soldados = Soldado::find($id_Soldado);
+        $soldados->telefono = $request->input('telefono');
+        $soldados->estatura = $request->input('estatura');
+        $soldados->peso = $request->input('peso');
         $soldados->save();
-        return redirect('soldados.index');
+        return view('soldados.index', compact('soldados'));
     }
 
     /**

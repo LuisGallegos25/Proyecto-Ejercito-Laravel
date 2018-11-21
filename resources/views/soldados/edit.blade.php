@@ -12,15 +12,14 @@
   </head>
   <body>
     <div class="container">
-      <h2><strong>Registro de soldados</strong></h2><br/>
-      <form method="post" action="{{url('/soldado')}}" enctype="multipart/form-data">
+      <h2><strong>Editar datos de Soldado</strong></h2><br/>
+      <form method="post" action="soldado/{{$soldados->id_Soldado}}" enctype="multipart/form-data">
       {!! csrf_field()!!}
-
         <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Email">Telefono:</label>
-              <input type="text" class="form-control" name="telefono">
+              <input type="text" class="form-control" name="telefono" value="{{$soldados->telefono}}">
             </div>
           </div>
 
@@ -29,7 +28,7 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Number">Estatura:</label>
-              <input type="text" class="form-control" name="estatura">
+              <input type="text" class="form-control" name="estatura" value="{{$soldados->estatura}}">
             </div>
           </div>
     
@@ -37,14 +36,14 @@
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
             <strong>Peso : </strong>  
-            <input class="date form-control"  type="text" id="datepicker" name="peso">   
+            <input class="date form-control"  type="text" id="datepicker" name="peso" value="{{$soldados->peso}}">   
          </div>
         </div>
       
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4" style="margin-top:60px">
-            <button type="submit" class="btn btn-success">Registrar</button>
+            <button type="submit" class="btn btn-success">Actualizar</button>
           </div>
         </div>
       </form>

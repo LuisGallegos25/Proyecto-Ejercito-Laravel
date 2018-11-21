@@ -1,5 +1,3 @@
-
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -44,7 +42,7 @@
         <td>{{$person->estatura}}</td>
         <td>{{$person->peso}}</td> 
          <td>{{$person->arma}}</td>    
-        <td><a href="#" class="btn btn-warning">Edit</a></td>
+        <td><a href="soldado/{{$person->id_Soldado}}" class="btn btn-warning">Editar</a></td>
         <td>
           <form action="#" method="post">
             <input name="_method" type="hidden" value="DELETE">

@@ -16,7 +16,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/soldado', function () {
+Route::get('/persona', function () {
     return 'welcome';
 });
 
@@ -30,7 +30,10 @@ Route::get('/usuaririos/nuevo', function () {
 
 //Route::resource('persona/nuevo','PersonasController'); 
 //Route::resource('persona/create','PersonasController'); 
-Route::resource('soldado','SoldadoController'); 
+Route::resource('soldado','SoldadoController');
+//Route::get('/soldado/editar/{id_Soldado}','SoldadoController@show');  
+//Route::post('/soldado/editarr/{id_Soldado}','SoldadoController@update'); 
+
 //Route::resource('persona/update','PersonasController'); 
 
 
