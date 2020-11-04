@@ -8,6 +8,10 @@ class Soldado extends Model
 {
    protected $table = 'soldados';
    protected $primaryKey = 'id_Soldado';
+    public function getRouteKeyName(){
+
+    	return 'slug';
+    }
 
 
 }

@@ -74,8 +74,8 @@ class SoldadoController extends Controller
      */
     public function show($id_Soldado)
     {
-       $soldado = Soldado::where('id_Soldado', $id_Soldado)->first();
-       //$soldado = Soldado::find($id_Soldado);
+       //$soldado = Soldado::where('id_Soldado', $id_Soldado)->first();
+       $soldado = Soldado::find($id_Soldado);
         return view('soldados.edit', compact('soldado'));
     }
 
@@ -87,7 +87,7 @@ class SoldadoController extends Controller
      */
     public function edit($id_Soldado)
     {
-       $soldado = Soldado::where('id_Soldado', $id_Soldado)->first();
+       $soldado = Soldado::find($id_Soldado);
         //$soldado = Soldado::find($id_Soldado);
         return view('soldados.edit', compact('soldado'));
     }

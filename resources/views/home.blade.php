@@ -123,7 +123,7 @@
                     </li>
                     <li>
                         <img src="https://cdnuploads.aa.com.tr/uploads/Contents/2018/07/10/thumbs_b_c_d5703454b9a6c08a28d7965a2166d895.jpg?v=065743" width="200" alt=""/>
-                        <a href="/instructores">INSTRUCTORES</a>
+                        <a href="/instructor">INSTRUCTORES</a>
                         <ul>
                             <li><a href="/instructores/create">REGISTRAR NUEVOS</a></li>
                             <li><a href="">ELIMINAR REGISTRO</a></li>
@@ -132,16 +132,16 @@
                     </li>
                     <li>
                         <img src="https://i.ytimg.com/vi/1CbGafo7SSI/maxresdefault.jpg" width="200" alt=""/>
-                        <a href="">ESCALONES</a>
+                        <a href="">REGIMIENTO</a>
                         <ul>
-                            <li><a href="">LISTAR ESCALONES</a></li>
+                            <li><a href="">LISTAR</a></li>
                         </ul>
                     </li>
                     <li>
                         <img src="https://c1.staticflickr.com/5/4436/36795681041_8b11cb6651_b.jpg" width="169" alt=""/>
                         <a href="">ESCUADRONES</a>
                         <ul>
-                            <li><a href="">LISTAR ESCUADRONES</a></li>
+                            <li><a href="">LISTAR</a></li>
                         </ul>
                     </li>
                 </ul>

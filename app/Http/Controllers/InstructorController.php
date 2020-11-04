@@ -72,10 +72,9 @@ class instructorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id_Instructor)
+    public function show($id_Instructorx)
     {
-        $instructor = Instructor::where('id_Instructor', $id_Instructor)->first();
-        return view('instructor.index2', compact('instructor'));
+            
         
     }
 
@@ -87,8 +86,8 @@ class instructorController extends Controller
      */
     public function edit($id_Instructor)
     {
-      $instructor = Instructor::where('id_Instructor', $id_Instructor)->first();
-        return view('instructor.index2', compact('instructor'));
+     $instructor = Instructor::find($id_Instructor);
+        return view('instructor.edit', compact('instructor'));
     }
 
     /**

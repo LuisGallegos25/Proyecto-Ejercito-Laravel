@@ -8,4 +8,8 @@ class Instructor extends Model
 {
     protected $table = 'Instructors';
     protected $primaryKey = 'id_Instructor';
+    public function getRouteKeyName(){
+
+    	return 'slug';
+    }
 }
